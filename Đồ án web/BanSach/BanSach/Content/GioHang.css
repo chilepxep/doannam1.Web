@@ -1,0 +1,16 @@
+﻿body {
+    margin: 0;
+}
+#SanPham {
+    padding-top: 30px;
+}
+
+#SanPham {
+    text-align: center;
+}
+
+.SanPham {
+    height: 380px;
+    width: 300px;
+    box-shadow: 0 0 10px lightgray;
+}

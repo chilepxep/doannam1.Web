@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/GioHang_LayoutPage.cshtml";
+}
+<link href="~/Content/GioHang.css" rel="stylesheet" />
+
+
+    <div class="container mt-3">
+        <h2>Giỏ hàng của bạn</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Ảnh Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xoá</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6">Chưa có sản phầm ...</td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+        <a href="@Url.Action("Index","TrangChu")">Tiếp tục mua hàng</a>
+    </div>
+

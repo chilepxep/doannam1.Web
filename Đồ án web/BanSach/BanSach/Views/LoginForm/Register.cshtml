@@ -1,0 +1,48 @@
+﻿@model BanSach.Models.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/DangKi.cshtml";
+}
+
+
+<div style="padding-bottom:30px; padding-top:30px;">
+    @using (Html.BeginForm("Register", "LoginForm", FormMethod.Post))
+    {
+        <div width:100% style="text-align:center; padding-left:40px; padding-right:40px;">
+            <table style="text-align:center; width:100%; border:1px solid #000000">
+                <tr>
+                    <td><h1>@Html.LabelFor(m => m.Fullname)</h1> </td>
+                    <td>@Html.TextBoxFor(m => m.Fullname)</td>
+                </tr>
+                <tr>
+                    <td><h1>@Html.LabelFor(m => m.Phone_number)</h1></td>
+                    <td>@Html.TextBoxFor(m => m.Phone_number)</td>
+                </tr>
+                <tr>
+                    <td><h1>@Html.LabelFor(m => m.Address)</h1></td>
+                    <td>@Html.TextAreaFor(m => m.Address)</td>
+                </tr>
+                <tr>
+                    <td><h1>@Html.LabelFor(m => m.Email)</h1></td>
+                    <td>@Html.TextBoxFor(m => m.Email)</td>
+                </tr>
+                <tr>
+                    <td>
+                        @if (ViewBag.error != null)
+                        {@ViewBag.error}
+                    </td>
+                </tr>
+                <tr>
+                    <td><h1>@Html.LabelFor(m => m.Password)</h1></td>
+                    <td>@Html.TextBoxFor(m => m.Password)</td>
+                </tr>             
+                <tr>
+                    <td colspan="2" style="padding-left:800px; width:100px; font-size:30px;">
+                        <input type="submit" name="btnRegister" value="Register" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

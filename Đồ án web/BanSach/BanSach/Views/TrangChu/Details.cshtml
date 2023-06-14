@@ -1,0 +1,28 @@
+﻿@model BanSach.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/TrangChu_LayoutPage.cshtml";
+}
+
+<h2 style="text-align:center; padding-top:50px; padding-bottom:30px">Sản Phẩm</h2>
+<div>
+    <div class="sanpham">
+        <div class="row">
+            <div style="text-align:center;" class="col-sm-4"><img style="margin-top:10px; " class="SpIMG" src="@Url.Content(Model.Thumbnail)" height="300" width="300" /></div>
+            <div class="col-sm-8" style="background-color: lavenderblush; padding-left: 30px;">
+                <p style="font-size:xx-large" class="SpTitle">@Html.DisplayFor(model => model.Title)</p>
+                <p style="font-size:x-large" class="SpDiscount">Giá giảm: @Html.DisplayFor(model => model.Discount) VND</p>
+                <p style="text-decoration: line-through" class="SpPrice">@Html.DisplayFor(model => model.Price) VND</p>
+                <p class="SpDecription">Tác Giả: @Html.DisplayFor(model => model.Description)</p>
+                <p class="SpInventory">Số lượng: @Html.DisplayFor(model => model.Inventory) Quyển</p>
+                <a href="/ShoppingCart/AddtoCart/@Model.ID">
+                    <p><input style="margin-bottom:10px" type="submit" value="Thêm vào giỏ hàng" /></p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="text-align:center; margin-top:50px; font-size:x-large; background-color:linen;">
+       @Html.ActionLink("<<-Về Trang Chủ->>", "Index")
+</p>

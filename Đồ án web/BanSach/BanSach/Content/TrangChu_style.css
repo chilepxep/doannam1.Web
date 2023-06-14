@@ -1,0 +1,32 @@
+﻿body {
+    margin: 0;
+}
+#Search {
+    padding-right: 400px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+}
+#Button-Search {
+    margin-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    background-color: lightgray;
+}
+#d-flex {
+    text-align:center;
+    margin: 20px 0px;
+    
+}
+#SanPham {
+   padding-top:30px;
+}
+#SanPham {
+    text-align: center;
+}
+.SanPham {
+    height: 380px;
+    width: 300px;
+    box-shadow: 0 0 10px lightgray;
+}

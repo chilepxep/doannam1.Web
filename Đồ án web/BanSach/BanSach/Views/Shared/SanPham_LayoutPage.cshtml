@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/Js/bootstrap.bundle.min.js"></script>
+    <link href="~/Content/Bootstrap5/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/Fontawesome/all.js"></script>
+    <link href="~/Content/SanPham_Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div-top">
+        <!-- Phần nút chọn-->
+        <div style="width:100%">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/TrangChu/Index"><i class="fa-solid fa-house"></i></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Tài khoản</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/FeedBack1/YKienNguoiDung">Liên hệ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="~/ShoppingCart/ShowToCart">
+                                    Giỏ hàng  <i class="fa-solid fa-cart-plus"></i>
+                                    @Html.Action("BagCart", "ShoppingCart")
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Danh Mục Sản Phẩm</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/LoaiSach/LoaiSach">Sách văn học</a></li>
+                                    <li><a class="dropdown-item" href="/LoaiSach2/LoaiSach2">Sách Kinh Tế</a></li>
+                                    <li><a class="dropdown-item" href="/LoaiSach3/LoaiSach3">Sách thiếu nhi</a></li>'
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <br />
+    <!--<div>
+        <form style="padding-top:20px; text-align:center" id="d-flex">
+            <input id="Search" type="text" placeholder="Search">
+            <button id="Button-Search" type="button"> <i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        </form>
+    </div>-->
+
+    <div id="Containt">
+        @RenderBody()
+    </div>
+
+    <div>
+        <!--Footer-->
+        <div class="Footer">
+            <!-- Footer -->
+            <footer class="text-center text-lg-start bg-white text-muted">
+                <!-- Section: Social media -->
+                <!-- Section: Social media -->
+                <!-- Section: Links  -->
+                <section style="background-color: black; color: rgba(255,255,255,.55) " class="Footer1">
+                    <div class="container text-center text-md-start mt-5">
+                        <!-- Grid row -->
+                        <div class="row mt-3">
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                                <!-- Content -->
+                                <h6 class="text-uppercase fw-bold mb-4">
+                                    <i style="margin-top:15px" class="fas fa-gem me-3 text-secondary"></i>Nhóm 2
+                                </h6>
+                                <p>
+                                    Mang Đến tri thức cho mọi người.
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 style="margin-top:15px;" class="text-uppercase fw-bold mb-4">
+                                    Home
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Trang Chủ</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Tài Khoản</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Giỏ Hàng</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">FeedBack</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                                <!-- Links -->
+                                <h6 style="margin-top:15px" class="text-uppercase fw-bold mb-4">
+                                    Product
+                                </h6>
+                                <p>
+                                    <a href="#!" class="text-reset">Sách văn học</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Sách kinh tế</a>
+                                </p>
+                                <p>
+                                    <a href="#!" class="text-reset">Sách tri thức</a>
+                                </p>
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                                <!-- Links -->
+                                <h6 style="margin-top:15px" class="text-uppercase fw-bold mb-4">Contact</h6>
+                                <p><i class="fas fa-home me-3 text-secondary"></i> 828 Sư Vạn Hạnh, Phường 12, Quận 10, Thành phố Hồ Chí Minh</p>
+                                <p>
+                                    <i class="fas fa-envelope me-3 text-secondary"></i>
+                                    nhom2@gmail.com
+                                </p>
+                                <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                                <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                    </div>
+                </section>
+                <!-- Section: Links  -->
+                <!-- Copyright -->
+                <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+                    <div class="me-5 d-none d-lg-block">
+                        <span>Get connected with us on social networks:</span>
+                    </div>
+                    <!-- Left -->
+                    <!-- Right -->
+                    <div>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="" class="me-4 link-secondary">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <!-- Footer -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿@model BanSach.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/Shared/GioHang_LayoutPage.cshtml";
+}
+<link href="~/Content/GioHang.css" rel="stylesheet" />
+@if (Model != null)
+{
+<div class="container mt-3">
+    <h2 style="text-align: center">Giỏ hàng của bạn</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Ảnh Sản Phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Xoá</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                
+                double total = Convert.ToDouble(item._shopping_product.Discount.Value * item._shopping_quantity);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.Title)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item._shopping_product.Thumbnail)" style=" width:150px; height: 150px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item._shopping_product.Discount) VND
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Update_Quantity_Cart", "ShoppingCart"))
+                        {
+                            <input type="hidden" value="@item._shopping_product.ID" name="id_Pro" />
+                            <input type="number" value="@item._shopping_quantity" name="Quantity" />
+                            <input type="submit" value="Update Quantity" />
+                        }
+                    </td>
+
+                    <td>
+                        Thành tiền: @total
+                    </td>
+                    <td>
+                        <a href="/ShoppingCart/RemoveCart/@item._shopping_product.ID">xoá</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align:right">Tổng tiền: @Model.Total_Money() </td>
+            </tr>
+        </tfoot>
+    </table>
+    <a href="@Url.Action("Index","TrangChu")">Tiếp tục mua hàng</a>
+
+      @using (Html.BeginForm("CheckOut","ShoppingCart"))
+      {
+         <div class="container mt-3">
+                <h2>Thông tin giao hàng</h2>
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                        <label for="email">ID:</label>
+                        <input type="number" class="form-control" placeholder="id..." name="iduser">
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="email">Họ và tên</label>
+                        <input type="text" class="form-control" placeholder="Họ và tên..." name="hovaten">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd">Email:</label>
+                        <input type="text" class="form-control" placeholder="Email..." name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd">SĐT</label>
+                        <input type="text" class="form-control" placeholder="SĐT..." name="sdt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd">Địa Chỉ:</label>
+                        <input type="text" class="form-control" placeholder="Địa Chỉ" name="diachi">
+                    </div>
+                    <div class="mb-3">
+                        <label for="pwd">Ghi chú:</label>
+                        <input type="text" class="form-control" placeholder="Ghi chú" name="ghichu">
+                   
+                    </div>
+                    <input type="submit" value="CheckOut" class="btn btn-success" />
+                </form>
+            </div>
+       }
+</div>
+
+}
+

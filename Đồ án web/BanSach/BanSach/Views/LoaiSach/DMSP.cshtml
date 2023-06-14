@@ -1,0 +1,9 @@
+﻿@model  IEnumerable<BanSach.Models.Category>
+<div class="container">
+    <div class="row">
+        @foreach (var sp in Model)
+        {
+            <a class="dropdown-item" href="/LoaiSach/LoaiSach">@Html.DisplayFor(m=>sp.Name)</a>
+        }
+    </div>
+</div>

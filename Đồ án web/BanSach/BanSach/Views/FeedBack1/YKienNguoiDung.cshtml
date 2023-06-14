@@ -1,0 +1,29 @@
+﻿@model BanSach.Models.Feedback
+
+@{
+    ViewBag.Title = "YKienNguoiDung";
+    Layout = "~/Views/Shared/SanPham_LayoutPage.cshtml";
+}
+
+<h2 style="text-align:center">Phản hồi cho chúng tôi</h2>
+@using (Html.BeginForm("YkienNguoiDung", "FeedBack1", FormMethod.Post))
+{
+    <div width:100% style="text-align:center; padding-left:40px; padding-right:40px;">
+        <table style="text-align:center; width:100%; border:1px solid #000000">         
+            <tr>
+                <td><h1>@Html.LabelFor(m => m.Subject_name)</h1></td>
+                <td>@Html.TextBoxFor(m => m.Subject_name)</td>
+            </tr>
+            <tr>
+                <td><h1>@Html.LabelFor(m => m.Note)</h1></td>
+                <td>@Html.TextAreaFor(m => m.Note)</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-left:450px; padding-bottom:10px">
+                    <input type="submit" name="btnLogin" value="Lưu ý kiến" style="font-size:25px;" />
+                </td>
+            </tr>
+
+        </table>
+    </div>
+}
